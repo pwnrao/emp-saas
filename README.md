@@ -1,10 +1,10 @@
 #emp-saas
 
 ##Description
-Enterprise SaaS for Poject wise crowd based fund sourcing 
+A Test Project. Enterprise SaaS for Poject wise crowd based fund sourcing 
 
 ## For developers
-- This is a Sample Web app consists of node js framework with mongodb for data store
+- This is a Sample web application built on node js framework with mongoose for data store
  
 ## Run
 - Deploy the project 
