@@ -1,7 +1,10 @@
-# Sample Web app for Enterprise SaaS 
+#emp-saas
+
+##Description
+Enterprise SaaS for Poject wise crowd based fund sourcing 
 
 ## For developers
-- Consists of node js framework with mongodb for data store
+- This is a Sample Web app consists of node js framework with mongodb for data store
  
 ## Run
 - Deploy the project 
@@ -11,3 +14,5 @@
 
 ## Contribution
 - Pawan Rao (pawanhn@gmail.com, https://www.linkedin.com/in/pawanrao)
+ 
+ 
