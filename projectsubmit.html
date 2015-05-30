@@ -1,0 +1,89 @@
+<html>
+<head>
+  <title>Team</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+</head>
+<script>
+      $(document).ready(function(){
+        var user,pass;
+        $("#subbtn").click(function(){
+          title = $("#inputTitle").val();
+          descr = $("#inputDescr").val();
+          var str  = $("#projectstage :selected").text() 
+          $.post("http://localhost:5001/projectvalidate",{heading: title, projdescription: descr, stage:str}, function(data){
+            if(data==='done')
+              {
+                alert("login success");
+              }
+          });
+        });
+      });
+</script>
+<body>
+<div class="container">
+<form class="form-horizontal" role="form">
+  <fieldset>
+    <legend>Project Details</legend>
+    <div class="form-group">
+      <label for="inputTitle" class="col-lg-2 control-label">Title</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputTitle" placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputDescr" class="col-lg-2 control-label">Description</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control" id="inputDescr" placeholder="Short Description">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="textArea" class="col-lg-2 control-label">Textarea</label>
+      <div class="col-lg-10">
+        <textarea class="form-control" rows="3" id="textArea"></textarea>
+        <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Radios</label>
+      <div class="col-lg-10">
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+            Software Only
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+            Hardware cum Software
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="select" class="col-lg-2 control-label">Phase of the project</label>
+      <div class="col-lg-10">
+        <select class="form-control" id="projectstage">
+          <option>Ideation</option>
+          <option>Design</option>
+          <option>Prototyping</option>
+          <option>Marketing</option>
+          <option>Beta Product Ready</option>
+        </select>
+        <br>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-lg-10 col-lg-offset-2">
+        <button type="reset" class="btn btn-default">Cancel</button>
+        <button type="submit" id="subbtn"  class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </fieldset>
+</form>
+</div>
+</body>
+</html>

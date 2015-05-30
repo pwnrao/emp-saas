@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>Simple login</title>
+   <!-- <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script> ! -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        var user,pass;
+        $("#submitbtn").click(function(){
+          user=$("#user").val();
+          pass=$("#password").val();
+          $.post("http://localhost:5001/signup",{user: user,password: pass}, function(data){
+            if(data==='done')
+              {
+                alert("login success");
+              }
+          });
+          
+      
+
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Hello people !</h1>
+    <input type="TEXT" id="user" size="40"><br>
+    <input type="password" id="password" size="40"><br>
+    <input type="button" id="submitbtn" value="Submit">
+  </body>
+</html>
